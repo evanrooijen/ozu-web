@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <div className="flex justify-end p-4">
+          <div className="fixed top-4 right-4 z-50">
             <ThemeToggle />
           </div>
           {children}
