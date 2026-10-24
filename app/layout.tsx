@@ -27,7 +27,12 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <footer className="mt-auto py-6 text-center text-sm text-muted-foreground">
+          <p>© 2026 Ozu. All rights reserved.</p>
+        </footer>
+      </body>
     </html>
   );
 }
