@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
+import { Providers } from "./providers";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -28,7 +29,7 @@ export default function RootLayout({
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <Providers>{children}</Providers>
         <footer className="mt-auto py-6 text-center text-sm text-muted-foreground">
           <p>© 2026 Ozu. All rights reserved.</p>
         </footer>
