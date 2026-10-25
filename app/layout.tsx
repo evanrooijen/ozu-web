@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
 import { Providers } from "./providers";
+import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -27,12 +28,25 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem("ozu-theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
-        <Providers>{children}</Providers>
-        <footer className="mt-auto py-6 text-center text-sm text-muted-foreground">
-          <p>© 2026 Ozu. All rights reserved.</p>
-        </footer>
+        <Providers>
+          <header className="flex w-full justify-end p-4">
+            <ThemeToggle />
+          </header>
+          {children}
+          <footer className="mt-auto py-6 text-center text-sm text-muted-foreground">
+            <p>© 2026 Ozu. All rights reserved.</p>
+          </footer>
+        </Providers>
       </body>
     </html>
   );
