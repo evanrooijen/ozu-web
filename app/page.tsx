@@ -58,6 +58,14 @@ export default function Home() {
           >
             Documentation
           </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-border px-5 transition-colors hover:bg-accent hover:text-accent-foreground md:w-[158px]"
+            href="https://tanstack.com/query/latest/docs/framework/react/overview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tanstack Query
+          </a>
         </div>
       </main>
     </div>
